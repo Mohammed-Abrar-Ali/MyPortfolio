@@ -269,7 +269,7 @@ const ChatBot = () => {
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
       <BackgroundContainer>
-        <PowerButton/>
+        <PowerButton left = "4rem" top="1rem"/>
         <ChatBotContainer
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

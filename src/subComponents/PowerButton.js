@@ -29,20 +29,25 @@ cursor: pointer;
 &:hover{
     background-color: rgb(0,255,0);
     box-shadow: 0 0 8px 6px rgba(0,255,0,0.2);
+    }
+    
+    &>*:first-child{
+        text-decoration: none;
+        color: inherit;
+    }
 }
-
-&>*:first-child{
-    text-decoration: none;
-    color: inherit;
+@media (max-width: 768px) {
+    top: ${(props) => props.top || '1rem'};
+    left: ${(props) => props.left || '50%'};
 }
 `
 
-const PowerButton = () => {
+const PowerButton = (props) => {
     return (
-        <Power>
-        <NavLink to="/MyPortfolio/">
-        <PowerBtn width={30} height={30} fill='currentColor' />
-        </NavLink>
+        <Power left={props.left} top={props.top}>
+            <NavLink to="/MyPortfolio/">
+                <PowerBtn width={30} height={30} fill='currentColor' />
+            </NavLink>
         </Power>
     )
 }
