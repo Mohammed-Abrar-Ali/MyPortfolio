@@ -12,34 +12,69 @@ const Box = styled(motion.div)`
   width: 65vw;
   height: 55vh;
   display: flex;
-  background: linear-gradient(
-      to right,
-      ${props => props.theme.body} 50%,
-      ${props => props.theme.text} 50%) bottom,
-    linear-gradient(
-      to right,
-      ${props => props.theme.body} 50%,
-      ${props => props.theme.text} 50%) top;
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-  border-left: 2px solid ${props => props.theme.body};
-  border-right: 2px solid ${props => props.theme.text};
-  z-index: 1;
+  // background: linear-gradient(
+  //     to right,
+  //     ${props => props.theme.body} 50%,
+  //     ${props => props.theme.text} 50%) bottom,
+  //   linear-gradient(
+  //     to right,
+  //     ${props => props.theme.body} 50%,
+  //     ${props => props.theme.text} 50%) top;
+      // background-repeat: no-repeat;
+      // background-size: 100% 2px;
+      // border-left: 2px solid ${props => props.theme.body};
+      // border-right: 2px solid ${props => props.theme.text};
+      z-index: 1;
+      @media(max-width: 768px) {
+        border-left: none;
+        border-right: none;
+        // border-top: 2px solid ${props => props.theme.body};
+        // border-bottom: 2px solid ${props => props.theme.text};
+        flex-direction:column;
+      }
 `;
 
 const SubBox = styled.div`
   width: 50%;
   position: relative;
   display: flex;
-
+  
+  @media(max-width: 768px) {
+    width:100%;
+    height:50%;
+    }
+    
   .pic {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 10%);
-    width: 100%;
+    width: 70vh;
     height: auto;
+    @media (max-width: 768px) {
+      left: 50%;
+      width:60vw;
+    }
   }
+  &:nth-child(1) {
+    border: 2px solid ${props => props.theme.body};
+    border-right:none;
+    @media (max-width: 768px) {
+      border: 2px solid ${props => props.theme.body};
+      border-bottom:none;
+    }
+  }
+  
+  &:nth-child(2) {
+    border: 2px solid ${props => props.theme.text};
+    border-left:none;
+    @media (max-width: 768px) {
+      border: 2px solid ${props => props.theme.text};
+      border-top:none;
+    }
+  }
+
+}
 `;
 
 const Text = styled.div`

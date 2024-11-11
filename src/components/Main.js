@@ -29,7 +29,9 @@ padding: 2rem;
 `
 
 const Contact = styled.a`
-color: ${props => props.theme.text};
+// color: ${props => props.theme.text};
+color: white;
+mix-blend-mode:difference;
 position: absolute;
 top: 2rem;
 right: calc(1rem + 2vw);
@@ -37,17 +39,20 @@ text-decoration: none;
 z-index:1;
 `
 const BLOG = styled(NavLink)`
-color: ${props => props.theme.text};
+// color: ${props => props.theme.text};
+color: white;
+mix-blend-mode:difference;
 position: absolute;
 top: 50%;
 right: calc(1rem + 2vw);
 transform: rotate(90deg) translate(-50%, -50%);
 text-decoration: none;
-z-index:1;
+z-index:10;
 `
 const WORK = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
-
+// color: ${props => props.click ? props.theme.body : props.theme.text};
+color: white;
+mix-blend-mode:difference;
 position: absolute;
 top: 50%;
 left: calc(1rem + 2vw);
@@ -68,7 +73,9 @@ justify-content: space-evenly;
 `
 
 const ABOUT = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
+// color: ${props => props.click ? props.theme.body : props.theme.text};
+color: white;
+mix-blend-mode:difference;
 text-decoration: none;
 z-index:1;
 `
@@ -123,6 +130,12 @@ width: ${props => props.click ? '50%' : '0%'};
 height: ${props => props.click ? '100%' : '0%'};
 z-index:1;
 transition: height 0.5s ease, width 1s ease 0.5s;
+    @media (max-width: 768px) {
+        right: 0;
+        width: ${props => props.click ? '100%' : '0%'};
+        height: ${props => props.click ? '50%' : '0%'};
+    }
+
 `
 
 
