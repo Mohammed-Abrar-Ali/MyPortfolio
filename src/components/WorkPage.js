@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
 import { motion } from "framer-motion";
@@ -14,11 +14,13 @@ import BigTitlte from "../subComponents/BigTitlte";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-
   height: 400vh;
   position: relative;
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    height:200vh;
+  }
 `;
 
 const Main = styled(motion.ul)`
@@ -27,9 +29,13 @@ const Main = styled(motion.ul)`
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
-
   color: white;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    left:20vw;
+  }
 `;
+
 const Rotate = styled.span`
   display: block;
   position: fixed;
@@ -45,7 +51,6 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-
     transition: {
       staggerChildren: 0.5,
       duration: 0.5,
@@ -56,22 +61,42 @@ const container = {
 const WorkPage = () => {
   const ref = useRef(null);
   const yinyang = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    let element = ref.current;
+    // Set up a resize listener to update `isMobile` based on window width
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const element = ref.current;
 
     const rotate = () => {
-      element.style.transform = `translateX(${-window.pageYOffset}px)`;
+      if (isMobile) {
+        // For mobile devices (<768px), scroll vertically
+        element.style.transform = `translateY(${-window.pageYOffset}px)`;
+      } else {
+        // For larger devices, scroll horizontally
+        element.style.transform = `translateX(${-window.pageYOffset}px)`;
+      }
 
-      return (yinyang.current.style.transform =
-        "rotate(" + -window.pageYOffset + "deg)");
+      if (yinyang.current) {
+        yinyang.current.style.transform = `rotate(${-window.pageYOffset}deg)`;
+      }
     };
 
     window.addEventListener("scroll", rotate);
     return () => {
       window.removeEventListener("scroll", rotate);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <ThemeProvider theme={DarkTheme}>

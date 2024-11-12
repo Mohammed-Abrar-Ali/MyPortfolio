@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import {lightTheme} from './Themes';
-import { Design, Develope} from './AllSvgs';
+import { lightTheme } from './Themes';
+import { Design, Develope } from './AllSvgs';
 
 
 import LogoComponent from '../subComponents/LogoComponent';
@@ -16,6 +16,9 @@ width: 100vw;
 height:100vh;
 position: relative;
 display: flex;
+@media (max-width: 768px) {
+    flex-direction: column;
+}
 justify-content: space-evenly;
 align-items: center;
 
@@ -32,6 +35,10 @@ height: 60vh;
 z-index:3;
 line-height: 1.5;
 cursor: pointer;
+@media (max-width: 768px) {
+    width: 50vw;
+    margin:2rem;
+}
 
 font-family: 'Ubuntu Mono',monospace;
 display: flex;
@@ -85,74 +92,74 @@ ul,p{
 const MySkillsPage = () => {
     return (
         <ThemeProvider theme={lightTheme}>
-<Box>
+            <Box>
 
-<LogoComponent theme='light'/>
-<SocialIcons theme='light'/>
-<PowerButton />
-<ParticleComponent theme='light' />
-            <Main>
-<Title>
-    <Design width={40} height={40} /> Python Developer
-</Title>
-<Description>
-I love to code python apps and APIs that can help people.
-</Description>
-<Description>
-<strong>I like to Code</strong>
-<ul>
-    <li>
-        Web Development
-    </li>
-    <li>
-        API development
-    </li>
-</ul>
-</Description>
-<Description>
-<strong>Tools</strong>
-<ul>
-    <li>
-       LangChain
-    </li>
-    <li>
-       Transformers
-    </li>
-    <li>
-       SpaCy
-    </li>
-</ul>
-</Description>
+                <LogoComponent theme='light' />
+                <SocialIcons theme='light' />
+                <PowerButton />
+                <ParticleComponent theme='light' />
+                <Main>
+                    <Title>
+                        <Design width={40} height={40} /> Python Developer
+                    </Title>
+                    <Description>
+                        I love to code python apps and APIs that can help people.
+                    </Description>
+                    <Description>
+                        <strong>I like to Code</strong>
+                        <ul>
+                            <li>
+                                Web Development
+                            </li>
+                            <li>
+                                API development
+                            </li>
+                        </ul>
+                    </Description>
+                    <Description>
+                        <strong>Tools</strong>
+                        <ul>
+                            <li>
+                                LangChain
+                            </li>
+                            <li>
+                                Transformers
+                            </li>
+                            <li>
+                                SpaCy
+                            </li>
+                        </ul>
+                    </Description>
 
-            </Main>
-            <Main>
-<Title>
-    <Develope width={40} height={40} /> Frontend Developer
-</Title>
-<Description>
-I value User eXperiences and enjoy bringing new ideas to life.
-</Description>
-<Description>
-<strong>Skills</strong>
-<p>
-HTML, CSS, JavaScript.
-</p>
-</Description>
-<Description>
-<strong>Tools</strong>
-<p>
-Visual Studio code, Github, Codepen etc.
-</p>
-</Description>
+                </Main>
+                <Main>
+                    <Title>
+                        <Develope width={40} height={40} /> Frontend Developer
+                    </Title>
+                    <Description>
+                        I value User eXperiences and enjoy bringing new ideas to life.
+                    </Description>
+                    <Description>
+                        <strong>Skills</strong>
+                        <p>
+                            HTML, CSS, JavaScript.
+                        </p>
+                    </Description>
+                    <Description>
+                        <strong>Tools</strong>
+                        <p>
+                            Visual Studio code, Github, Codepen etc.
+                        </p>
+                    </Description>
 
-            </Main>
+                </Main>
 
-            <BigTitle text="SKILLS" top="80%" right="30%" />
+                <BigTitle text="SKILLS" top="80%" right="30%" />
 
-        </Box>
+            </Box>
 
         </ThemeProvider>
-        
+
     )
 }
 

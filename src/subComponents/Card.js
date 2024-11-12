@@ -19,7 +19,10 @@ flex-direction: column;
 justify-content: space-between;
 border: 1px solid ${props => props.theme.body};
 transition: all 0.2s ease;
-
+@media (max-width: 768px) {
+    width:40vw;   
+    margin-bottom:2rem;
+}
 &:hover{
 background-color: ${props => props.theme.body};
 color:${props => props.theme.text};
