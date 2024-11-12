@@ -19,7 +19,7 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 768px) {
-    height:200vh;
+    height:250vh;
   }
 `;
 
