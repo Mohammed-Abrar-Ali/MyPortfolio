@@ -29,7 +29,6 @@ padding: 2rem;
 `
 
 const Contact = styled.a`
-// color: ${props => props.theme.text};
 color: white;
 mix-blend-mode:difference;
 position: absolute;
@@ -39,7 +38,6 @@ text-decoration: none;
 z-index:1;
 `
 const BLOG = styled(NavLink)`
-// color: ${props => props.theme.text};
 color: white;
 mix-blend-mode:difference;
 position: absolute;
@@ -50,7 +48,6 @@ text-decoration: none;
 z-index:10;
 `
 const WORK = styled(NavLink)`
-// color: ${props => props.click ? props.theme.body : props.theme.text};
 color: white;
 mix-blend-mode:difference;
 position: absolute;
@@ -73,7 +70,6 @@ justify-content: space-evenly;
 `
 
 const ABOUT = styled(NavLink)`
-// color: ${props => props.click ? props.theme.body : props.theme.text};
 color: white;
 mix-blend-mode:difference;
 text-decoration: none;

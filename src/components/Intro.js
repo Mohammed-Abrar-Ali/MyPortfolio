@@ -12,18 +12,6 @@ const Box = styled(motion.div)`
   width: 65vw;
   height: 55vh;
   display: flex;
-  // background: linear-gradient(
-  //     to right,
-  //     ${props => props.theme.body} 50%,
-  //     ${props => props.theme.text} 50%) bottom,
-  //   linear-gradient(
-  //     to right,
-  //     ${props => props.theme.body} 50%,
-  //     ${props => props.theme.text} 50%) top;
-      // background-repeat: no-repeat;
-      // background-size: 100% 2px;
-      // border-left: 2px solid ${props => props.theme.body};
-      // border-right: 2px solid ${props => props.theme.text};
       z-index: 1;
       @media(max-width: 768px) {
         border-left: none;

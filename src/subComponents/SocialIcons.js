@@ -22,11 +22,11 @@ const Icons = styled.div`
 const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
-  background-color: ${(props) => props.fillColor};
+  background-color: ${(props) => props.fillcolor};
 `;
 
 const SocialIcons = (props) => {
-  const [fillColor, setIconColor] = useState('black');
+  const [fillcolor, setIconColor] = useState('black');
   const location = useLocation(); // Use React Router's useLocation hook to track current URL
 
   // Update icon color based on window width and URL path
@@ -68,7 +68,7 @@ const SocialIcons = (props) => {
           target="_blank"
           href={"https://github.com"}
         >
-          <Github width={25} height={25} fill={fillColor} />
+          <Github width={25} height={25} fill={fillcolor} />
         </a>
       </motion.div>
       <motion.div
@@ -81,7 +81,7 @@ const SocialIcons = (props) => {
           target="_blank"
           href={"https://twitter.com"}
         >
-          <Twitter width={25} height={25} fill={fillColor} />
+          <Twitter width={25} height={25} fill={fillcolor} />
         </a>
       </motion.div>
       <motion.div
@@ -94,7 +94,7 @@ const SocialIcons = (props) => {
           target="_blank"
           href={"https://facebook.com"}
         >
-          <Facebook width={25} height={25} fill={fillColor} />
+          <Facebook width={25} height={25} fill={fillcolor} />
         </a>
       </motion.div>
       <motion.div
@@ -107,12 +107,12 @@ const SocialIcons = (props) => {
           target="_blank"
           href={"https://youtube.com"}
         >
-          <YouTube width={25} height={25} fill={fillColor} />
+          <YouTube width={25} height={25} fill={fillcolor} />
         </a>
       </motion.div>
 
       <Line
-        fillColor={fillColor} // Pass fillColor as a prop to Line component
+        fillcolor={fillcolor} // Pass fillcolor as a prop to Line component
         initial={{
           height: 0,
         }}

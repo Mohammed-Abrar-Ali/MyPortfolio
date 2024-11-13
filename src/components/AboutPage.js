@@ -66,7 +66,7 @@ const AboutPage = () => {
                 <LogoComponent theme='dark' />
                 <SocialIcons theme='dark' />
                 <PowerButton />
-                <ParticleComponent theme='light' />
+                <ParticleComponent theme='dark' />
 
                 <Spaceman>
                     <img src={astronaut} alt="spaceman" />
