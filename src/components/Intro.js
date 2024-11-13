@@ -14,10 +14,6 @@ const Box = styled(motion.div)`
   display: flex;
       z-index: 1;
       @media(max-width: 768px) {
-        border-left: none;
-        border-right: none;
-        // border-top: 2px solid ${props => props.theme.body};
-        // border-bottom: 2px solid ${props => props.theme.text};
         flex-direction:column;
       }
 `;
@@ -47,6 +43,7 @@ const SubBox = styled.div`
   &:nth-child(1) {
     border: 2px solid ${props => props.theme.body};
     border-right:none;
+    overflow:hidden;
     @media (max-width: 768px) {
       border: 2px solid ${props => props.theme.body};
       border-bottom:none;
