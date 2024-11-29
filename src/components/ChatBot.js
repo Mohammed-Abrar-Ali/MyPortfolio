@@ -182,7 +182,7 @@ const ChatBot = () => {
 
   useEffect(() => {
     // Initialize the Gemini API and chat session
-    const apiKey = "AIzaSyDtd6qUqkhvI0CsFj7i5tcLQwE1bpsf37o"; // Make sure to set this in your .env file
+    const apiKey = process.env.REACT_APP_API_KEY; // Make sure to set this in your .env file
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
